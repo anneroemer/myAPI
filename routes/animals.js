@@ -71,7 +71,7 @@ router.get("/animals", async function(request, response, next) {
 })
 
 //get single animal by ID
-router.get("/animals/:animalId", auth, async function(request, response, next){
+router.get("/animals/:animalId", async function(request, response, next){
     try {
         let result = await Animal.findById(request.params.animalId);
         //let result = await Animal.findOne({})
@@ -90,7 +90,7 @@ router.get("/animals/:animalId", auth, async function(request, response, next){
     }
 });
 
-router.post("/animals", auth, function(request, response, next) {
+router.post("/animals", function(request, response, next) {
 
     //response.send("post request animals")
 
