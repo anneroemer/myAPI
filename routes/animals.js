@@ -29,7 +29,7 @@ router.get("/animals", auth, async function(request, response, next) {
 */
 
 
-router.get("/animals", auth, async function(request, response, next) {
+router.get("/animals", async function(request, response, next) {
     
     let limit = parseInt(request.query.limit) || 5;
     let offset = parseInt(request.query.offset) || 0;
