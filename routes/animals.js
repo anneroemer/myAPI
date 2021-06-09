@@ -133,7 +133,7 @@ router.patch("/animals/:animalId", auth, async function(request, response, next)
 
 })
 
-router.delete("/animals/:animalId", auth, async function(request, response, next) {
+router.delete("/animals/:animalId", async function(request, response, next) {
     
     try {
         await Animal.findByIdAndDelete(request.params.animalId);
@@ -146,5 +146,19 @@ router.delete("/animals/:animalId", auth, async function(request, response, next
     response.send("delete request animals")
 
 })
+
+// router.delete("/animals/:animalId", auth, async function(request, response, next) {
+    
+//     try {
+//         await Animal.findByIdAndDelete(request.params.animalId);
+//         response.status(200)
+//         response.end(); 
+//     } catch (error) {
+//         return next (error)
+//     }
+
+//     response.send("delete request animals")
+
+// })
 
 module.exports = router;
